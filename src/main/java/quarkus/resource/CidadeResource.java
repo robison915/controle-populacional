@@ -1,5 +1,6 @@
 package quarkus.resource;
 
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 import quarkus.domain.Cidade;
 import quarkus.domain.Estado;
 import quarkus.dto.InCidadeDto;
@@ -24,6 +25,10 @@ public class CidadeResource {
     private EstadoRepository estadoRepository;
     @Inject
     CidadeFacade cidadeFacade;
+
+
+    @ConfigProperty(name = "app-teste")
+    private String teste1;
 
     @POST
     @Path("/")
@@ -65,6 +70,12 @@ public class CidadeResource {
     @Produces("application/json")
     public Iterable<Cidade> find() {
         return cidadeRepository.findAll();
+    }
+
+    @GET
+    @Path("/teste")
+    public String teste() {
+        return teste1;
     }
 
 
