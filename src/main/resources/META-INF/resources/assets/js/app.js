@@ -1,4 +1,4 @@
-let host = location.host+'/';//'https://controle-populacional.herokuapp.com/'
+let host = location.origin+'/';//'https://controle-populacional.herokuapp.com/'
 console.log(host);
 $(document).ready(function(){
 
