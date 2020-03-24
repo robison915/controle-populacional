@@ -1,4 +1,5 @@
-let host = 'http://localhost:8080/'//'https://controle-populacional.herokuapp.com/'
+let host = location.host+'/';//'https://controle-populacional.herokuapp.com/'
+
 $(document).ready(function(){
 
 	$("#select-estado").change(function(){
