@@ -1,5 +1,5 @@
 let host = location.host+'/';//'https://controle-populacional.herokuapp.com/'
-
+console.log(host);
 $(document).ready(function(){
 
 	$("#select-estado").change(function(){
