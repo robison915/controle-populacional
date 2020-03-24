@@ -44,7 +44,8 @@ public class CidadeFacade {
             BigDecimal baixoPercentual = cidade.getPopulacao().subtract(corteCusto);
             BigDecimal altoPercentual = corteCusto;
             BigDecimal valorDesconto =  individualCusto.multiply(percentualCusto.divide(BigDecimal.valueOf(100)));
-            valor = baixoPercentual.multiply(valorDesconto).add(altoPercentual.multiply(individualCusto));
+
+            valor = baixoPercentual.multiply(individualCusto.subtract(valorDesconto)).add(altoPercentual.multiply(individualCusto));
             return CidadesDto.builder()
                     .cidade(cidade)
                     .custoPopulacional(valor)
